@@ -4,7 +4,7 @@ The `wc-appbar` is a component that imitation [SliverAppBar](https://api.flutter
 
 It can support running in various frameworks, such as `React` `Vue` `SolidJs`
 
-![image](https://raw.githubusercontent.com/huodoushigemi/wc-appbar/master/images/flutter_demo.gif)
+![image](https://raw.githubusercontent.com/huodoushigemi/wc-appbar/main/images/flutter.gif)
 
 ## 🌈 Demo
 
@@ -17,9 +17,9 @@ It can support running in various frameworks, such as `React` `Vue` `SolidJs`
       <td><a href="https://codepen.io/huodoushigemi/pen/Bavpome" target="_blank"><strong>Flutter Demo</strong></a></td>
     </tr>
     <tr>
-      <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/master/images/yuumi.gif" /></td>
-      <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/master/images/classic.gif" /></td>
-      <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/master/images/flutter.gif" /></td>
+      <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/main/images/yuumi.gif" /></td>
+      <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/main/images/classics.gif" /></td>
+      <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/main/images/flutter.gif" /></td>
     </tr>
   </table>
 - [Vue SFC Playground][vue-sfc]
