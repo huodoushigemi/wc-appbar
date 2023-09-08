@@ -4,7 +4,7 @@ The `wc-appbar` is a component that imitation [SliverAppBar](https://api.flutter
 
 It can support running in various frameworks, such as `React` `Vue` `SolidJs`
 
-![image](https://raw.githubusercontent.com/huodoushigemi/wc-appbar/main/images/flutter.gif)
+> ![image](https://raw.githubusercontent.com/huodoushigemi/wc-appbar/main/images/flutter.gif)
 
 ## 🌈 Demo
 
@@ -151,6 +151,13 @@ export default defineConfig({
     })
   ],
 })
+```
+
+### 🚀 Use in SSR
+
+```diff
+- import 'wc-appbar'
++ if (typeof document != 'undefined') import('wc-appbar')
 ```
 
 ## 📄 Props
