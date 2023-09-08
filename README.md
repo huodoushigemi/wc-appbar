@@ -25,39 +25,6 @@ It can support running in various frameworks, such as `React` `Vue` `SolidJs`
 - [Vue SFC Playground][vue-sfc]
 - [SolidJs Playground](https://playground.solidjs.com/anonymous/aa7c9d31-1eeb-48f5-9562-6807b28d5457)
 
-
-<details>
-  <summary><h2>Animated Examples</h2></summary>
-
-  The following animations show how app bars with different configurations behave when a user scrolls up and then down again
-
-  - App bar with floating: false, pinned: false, snap: false:
-
-    <video controls><source src="https://flutter.github.io/assets-for-api-docs/assets/material/app_bar.mp4" type="video/mp4"></video>
-
-  - App bar with floating: true, pinned: false, snap: false:
-
-    <video controls><source src="https://flutter.github.io/assets-for-api-docs/assets/material/app_bar_floating.mp4" type="video/mp4"></video>
-
-  - App bar with floating: true, pinned: false, snap: true:
-
-    <video controls><source src="https://flutter.github.io/assets-for-api-docs/assets/material/app_bar_floating_snap.mp4" type="video/mp4"></video>
-
-  - App bar with floating: true, pinned: true, snap: false:
-
-    <video controls><source src="https://flutter.github.io/assets-for-api-docs/assets/material/app_bar_pinned_floating.mp4" type="video/mp4"></video>
-
-  - App bar with floating: true, pinned: true, snap: true:
-
-    <video controls><source src="https://flutter.github.io/assets-for-api-docs/assets/material/app_bar_pinned.mp4" type="video/mp4"></video>
-
-  - App bar with floating: false, pinned: true, snap: false:
-
-    <video controls><source src="https://flutter.github.io/assets-for-api-docs/assets/material/app_bar_pinned.mp4" type="video/mp4"></video>
-  
-  The property snap can only be set to true if floating is also true.
-</details>
-
 ## ⚙️ Installation
 
 - ### npm
