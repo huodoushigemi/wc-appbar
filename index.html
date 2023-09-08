@@ -6,22 +6,21 @@
     <link rel="stylesheet" href="./style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
-  </head>
-  <body>
+
     <script type="module" src="/src/index.ts"></script>
     <!-- <script type="module" src="/dist/index.mjs"></script> -->
     <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/wc-appbar/dist/index.iife.js"></script> -->
-
-    <wc-appbar minh="64" maxh="300" floating snap elevation="">
-      <div class="bar">
+  </head>
+<body>
+    <wc-appbar minh="64" pinned elevation="" style="margin-bottom: -64px;">
+      <div class="appbar">
         <img class="back" width="24" height="24" src="https://www.bing.com/rp/2d9PT4vq6Wgwkp7HP8R-0W7C1K0.svg" />
         <div class="title">JavaScript</div>
       </div>
-      <img class="bg" src="https://game.gtimg.cn/images/lol/act/img/guidetop/guide350000.jpg" />
     </wc-appbar>
 
-    <!-- <img class="cover" src="https://th.bing.com/th/id/R.f3a422fd8758ed3965cc268d26c4644f?rik=2QJLyuHzNN8rpg&riu=http%3a%2f%2fwww.cpd-india.com%2fblog%2fwp-content%2fuploads%2f2016%2f05%2fjavascript.jpg&ehk=bDQclm0d5dR4UVKMhqARyrsNFiDjJv60eZa%2f%2f0goG7k%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" /> -->
-  </body>
+    <img class="cover" src="https://th.bing.com/th/id/R.f3a422fd8758ed3965cc268d26c4644f?rik=2QJLyuHzNN8rpg&riu=http%3a%2f%2fwww.cpd-india.com%2fblog%2fwp-content%2fuploads%2f2016%2f05%2fjavascript.jpg&ehk=bDQclm0d5dR4UVKMhqARyrsNFiDjJv60eZa%2f%2f0goG7k%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" />
+</body>
 </html>
 
 <script>
@@ -42,13 +41,13 @@ body {
   margin: auto;
 }
 
-.bar {
+.appbar {
   position: relative;
   display: flex;
   align-items: center;
-  height: var(--wc-appbar-minh);
+  height: 100%;
   padding: 0 8px;
-  /* background: rgba(0,0,0, calc(var(--wc-appbar-offset) / var(--wc-appbar-minh))) */
+  background: rgba(0,0,0, calc(var(--wc-appbar-shrink-offset) / var(--wc-appbar-minh)))
 }
 
 .back {
@@ -58,16 +57,7 @@ body {
 
 .title {
   margin: 0 auto;
-  opacity: calc((var(--wc-appbar-offset) - var(--wc-appbar-minh) * .5) / (var(--wc-appbar-minh) * .5));
-}
-
-.bg {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  object-fit: cover;
+  opacity: calc((var(--wc-appbar-shrink-offset) - var(--wc-appbar-minh) * .5) / (var(--wc-appbar-minh) * .5));
 }
 
 .cover {

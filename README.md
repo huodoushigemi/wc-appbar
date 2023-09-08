@@ -4,14 +4,13 @@ The `wc-appbar` is a component that imitation [SliverAppBar](https://api.flutter
 
 It can support running in various frameworks, such as `React` `Vue` `SolidJs`
 
-![image](https://github.com/huodoushigemi/flow-layout-wc/assets/41646242/684221b7-f31b-4e71-b6b5-5380245bda42)
+![image](https://raw.githubusercontent.com/huodoushigemi/wc-appbar/master/images/flutter_demo.gif)
 
 ## 🌈 Demo
 
 [vue-sfc]: https://play.vuejs.org/#eNqVVW1v4zYM/iucD+slQ22nCzoMXlpgG27YhmEbtn0Z4C+KTNtqZUmw5CS9IP/9KCl2krZX4JIPFl9EPXxIUfvkR2OyzYBJkaws74VxYNEN5r5UojO6d7CHHutr2DLHWzhA3esO3tOO95NHmWx5yoxZs75MSlUqrpV1YIRSWMGd3z9z/YDz0VJLzZxQzdFWM2lPRquYeWYoVTh95k3XsGES7u7D5+oKZmOwjBQD0k76zmnTKo/5UCYkOOyMZA5JAlh9labwK7IKe0jTqJpSgKITqr0rk5vFokxIYjsvLaMUkyI5LrxqBEDKcenVHiyp/KdMwhl0SiU2wCWzliyBrvv/h6ETq5wMo4/ompOPD2V7TsvWOWOLPG9Yh1njyCvjKhcda9DmUsuccUdikzeDqNBpExfL2wX9sgfjI+Ux13xKNpBzJOQPQeyPdHigm7TWPZ2MIBQsffojLEF0Evb9HhAOhxH9FOkXrd0ZtXUQx/QkW6O8PzbHSigzODqp0xXKc1rdk0GSeYv8ca13Afwqj5uvsLPmh4t4U0u9iHhWky+MGTrxRbxY0DdjRZKntFf5WfeRaN2T9MvWdfIa1rp6gr3f0rG+EaqARYBhWFUR7Cge/MbMd2fwPNngBrvg3qJoWlcAZ5LPNqyfpelU5dR39By+gRuzmwfvWiuXWvERC1geA6wZf2x6PaiqgHd1XQelNowL9/SZsLbthXpMdV3TzJhDDi8Ppsszh5Tu5CuA5h7LMbPmmJi2wglNJLC11XJwGGBQN4+06PUDcpfWwueqN9gH7VZUri2AruzXF2xMio+pUBXuCkhvpkN9Fz/jM7s9svEKQQ53LmVSNISOo6LaXkQqlGtT3gpZzXCDah4jX7D6/cL/l1NBY4c8z7wWO6xiSbRzugtZmF3QSKwpq8jE53K+/e7o/GpFqVepbqzSW9891D8UGt75GbFYfHtERqMztGhyncQRT3U02YPVip6JgJZGQDDYMikifq87ewYKEseJxStFm+n2iE2fKXS5Mt1pBNHwsDS4fHUyIWokV/+KABCQAyFwlt6FWjTPzue6M0Ji/5fxrF3iYFLq7e9B59+d61EfLusr+gdL99cj/rtHi/0Gy2SyObqU6KL5w79/Ug+cGWkmDJK83zD+g6GPCWN0+4nKQbDP/ALa3wKd1IP/2Q87h8qOSXmggY3gXyb08v78RuonuMtsObF4+AQ0DZx8
 
 - <table width="100%">
-    <tr><th colspan="3">More Demos</th></tr>
     <tr>
       <td><a href="https://codepen.io/huodoushigemi/pen/yLGaxpq" target="_blank"><strong>Basic</strong></a></td>
       <td><a href="https://codepen.io/huodoushigemi/pen/RwEoqZe" target="_blank"><strong>Classics</strong></a></td>
@@ -20,7 +19,7 @@ It can support running in various frameworks, such as `React` `Vue` `SolidJs`
     <tr>
       <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/master/images/yuumi.gif" /></td>
       <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/master/images/classic.gif" /></td>
-      <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/master/images/flutter_demo.gif" /></td>
+      <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/master/images/flutter.gif" /></td>
     </tr>
   </table>
 - [Vue SFC Playground][vue-sfc]
