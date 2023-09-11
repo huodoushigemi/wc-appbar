@@ -1,13 +1,19 @@
 import { enqueue } from "./scheduler"
 import { getScrollParent, h, clamp, useRaf } from "./utils"
 
+const SIZE = Symbol('SIZE')
+
+interface SizeableElement extends HTMLElement {
+  [SIZE]: [number, number]
+}
+
 const defaultProps = {
   minh: 56,
   maxh: 0,
   floating: false,
   pinned: false,
   snap: false,
-  elevation: '0 4px 8px -2px #00000020'
+  elevation: '0 4px 8px -2px #00000020',
 }
 
 type Props = typeof defaultProps
@@ -15,7 +21,7 @@ type Props = typeof defaultProps
 const camlize = (s: string) => s.replace(/-\w/g, (e => e.slice(1).toUpperCase()))
 const hyphenate = (s: string) => s.replace(/(.)([A-Z])/g, (_, s: string, w: string) => s + '-' + w.toLowerCase())
 
-export class AppbarElement extends HTMLElement {
+export class AppbarElement extends HTMLElement implements SizeableElement {
   static get observedAttributes() { return Object.keys(defaultProps).map(hyphenate) }
 
   declare minh: number
@@ -29,9 +35,10 @@ export class AppbarElement extends HTMLElement {
 
   #scrollEl!: HTMLElement | Window
 
-  #box!: HTMLDivElement
+  #box!: HTMLElement
+  #bottom!: SizeableElement
   #hostStyle!: HTMLStyleElement
-  #size = [0, 0]
+  ;[SIZE]: [number, number] = [0, 0]
 
   /**
    * Value range `[0, maxh]`
@@ -78,33 +85,43 @@ export class AppbarElement extends HTMLElement {
 
   constructor() {
     super()
-    const root = this.attachShadow({ mode: 'open' })
-    root.appendChild(this.#hostStyle = h('style'))
+    this.attachShadow({ mode: 'open' })
   }
 
   connectedCallback() {
-    // console.log('connectedCallback');
-    new ResizeObserver(([e]) => {
-      this.#size[0] = e.contentRect.width
-      this.#size[1] = e.contentRect.height
-      this.#onScroll()
-    }).observe(this)
-
     this.#scrollEl = getScrollParent(this)
     this.#scrollEl.addEventListener('scroll', this.#onScroll, { passive: true })
+    
+    this.shadowRoot!.replaceChildren(
+      this.#box = h('div', null, [
+        h('slot'),
+        // @ts-ignore
+        this.#bottom = h('div', { [SIZE]: [0, 0], style: 'position: absolute; bottom: 0; width: 100%;' }, [
+          h('slot', { name: 'bottom' })
+        ]),
+      ]),
+      this.#hostStyle = h('style')
+    )
 
-    this.#box = h('div', null, [h('slot')])
-    this.shadowRoot!.appendChild(this.#box)
+    const sizeObs = new ResizeObserver((es) => {
+      es.forEach((e) => {
+        (e.target as SizeableElement)[SIZE] = [e.contentRect.width, e.contentRect.height]
+      })
+      this.#onScroll()
+    })
+
+    sizeObs.observe(this)
+    sizeObs.observe(this.#bottom)
 
     this.offset = this._maxh
   }
 
   disconnectedCallback() {
     this.#scrollEl.removeEventListener('scroll', this.#onScroll)
+    this.shadowRoot!.replaceChildren()
   }
 
   attributeChangedCallback<K extends keyof Props>(k: K, old: any, val: Props[K]) {
-    // console.log('attributeChangedCallback');
     // @ts-ignore
     if (typeof defaultProps[k] === 'boolean') val = val !== 'false' ? true : false
     else val = defaultProps[k].constructor(val)
@@ -154,17 +171,24 @@ export class AppbarElement extends HTMLElement {
   
   render = () => {
     const { props, h, y, style, offset, shrinkOffset, shrinkH, minh, _maxh: maxh } = this
+    // bottom height
+    const bh = this.#bottom[SIZE][1]
+
+    // Box Style
     Object.assign(this.#box.style, {
       position: 'fixed',
-      width: `${this.#size[0]}px`,
-      height: `${h}px`,
-      boxSizing: 'border-box',
+      width: `${this[SIZE][0]}px`,
+      height: `${h + bh}px`,
       boxShadow: props.pinned || (props.floating && this.offset != 0) ? props.elevation : '',
-      transform: `translateY(${y}px)`
+      transform: `translateY(${y}px)`,
+      zIndex: 1,
+      background: 'var(--wc-appbar-bg)'
     })
 
-    this.#hostStyle.innerHTML = `:host { position: relative; display: block; height: ${maxh}px; }`
+    const _0 = `:host { position: relative; display: block; height: ${maxh + bh}px; }`
+    if (this.#hostStyle.innerHTML != _0) this.#hostStyle.innerHTML = _0
 
+    // Css Var
     style.setProperty('--wc-appbar-minh', minh + '')
     style.setProperty('--wc-appbar-maxh', maxh + '')
     style.setProperty('--wc-appbar-offset', offset + '')

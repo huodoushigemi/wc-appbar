@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <script type="module" src="../src/index.ts"></script>
+  </head>
+  <body>
+    <wc-appbar maxh="160" pinned="true">
+      <div class="container">
+        <div class="bar">
+          <span class="title">SliverAppBar</span>
+        </div>
+        <img class="bg" src="https://avatars.githubusercontent.com/u/14101776?s=200&v=4" />
+      </div>
+    </wc-appbar>
+  </body>
+</html>
+
+<script>
+function h(tag, props, children) {
+  const el = Object.assign(document.createElement(tag), props)
+  children && el.replaceChildren(...children)
+  return el
+}
+
+Array(30).fill(0).forEach((_, i) => {
+  document.body.append(h('div', { className: 'item', innerText: i }))
+})
+</script>
+
+<style>
+body {
+  max-width: 375px;
+  margin: auto;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bar {
+  display: flex;
+  height: 100%;
+  --expanded-r: calc(1 - var(--wc-appbar-shrink-h) / (var(--wc-appbar-maxh) - var(--wc-appbar-minh)));
+  background: rgba(33, 150, 243, calc(1 - var(--expanded-r) / .5));
+}
+
+.title {
+  align-self: flex-end;
+  padding-left: 72px;
+  line-height: 2.8em;
+  color: #fff;
+  --min-fz: 20px;
+  --max-fz: 32px;
+  font-size: calc(var(--min-fz) + (var(--max-fz) - var(--min-fz)) * var(--expanded-r));
+}
+
+.bg {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: calc(var(--wc-appbar-maxh) * 1px);
+  background: rgb(33, 150, 243);
+  object-fit: contain;
+  z-index: -1;
+  transform: translateY(-50%);
+}
+
+.item {
+  font-size: 3em;
+  line-height: 100px;
+  text-align: center;
+}
+
+.item:nth-child(even) {
+  background: #80808030;
+}
+</style>

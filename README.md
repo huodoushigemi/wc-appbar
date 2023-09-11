@@ -14,12 +14,18 @@ It can support running in various frameworks, such as `React` `Vue` `SolidJs`
     <tr>
       <td><a href="https://codepen.io/huodoushigemi/pen/yLGaxpq" target="_blank"><strong>Basic</strong></a></td>
       <td><a href="https://codepen.io/huodoushigemi/pen/RwEoqZe" target="_blank"><strong>Classics</strong></a></td>
-      <td><a href="https://codepen.io/huodoushigemi/pen/Bavpome" target="_blank"><strong>Flutter Demo</strong></a></td>
     </tr>
     <tr>
       <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/main/images/yuumi.gif" /></td>
       <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/main/images/classics.gif" /></td>
+    </tr>
+    <tr>
+      <td><a href="https://codepen.io/huodoushigemi/pen/Bavpome" target="_blank"><strong>Flutter Demo</strong></a></td>
+      <td><a href="https://codepen.io/huodoushigemi/pen/GRPWaEq" target="_blank"><strong>Bottom</strong></a></td>
+    </tr>
+    <tr>
       <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/main/images/flutter.gif" /></td>
+      <td><img src="https://raw.githubusercontent.com/huodoushigemi/wc-appbar/main/images/bottom.gif" /></td>
     </tr>
   </table>
 - [Vue SFC Playground][vue-sfc]

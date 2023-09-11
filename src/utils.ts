@@ -6,7 +6,7 @@ export function remove<T>(list: T[], e: T) {
   ~i && list.splice(i, 1)
 }
 
-export function h<K extends keyof HTMLElementTagNameMap, P extends HTMLElementTagNameMap[K]>(tag: K, props?: Partial<P> | null, children?: Element[]): HTMLElementTagNameMap[K] {
+export function h<K extends keyof HTMLElementTagNameMap, P extends Record<string, any>>(tag: K, props?: Partial<HTMLElementTagNameMap[K]> & P | null, children?: Element[]): HTMLElementTagNameMap[K] & P {
   const el = Object.assign(document.createElement(tag), props)
   children && el.replaceChildren(...children)
   return el
