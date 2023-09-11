@@ -142,6 +142,7 @@ export default defineConfig({
 | pinned   | `boolean` | false   | Whether the app bar should remain visible at the start of the scroll view                 |
 | floating | `boolean` | false   | Whether the app bar should become visible as soon as the user scrolls towards the app bar |
 | snap     | `boolean` | false   | If `snap` and `floating` are true then the `floating` app bar will "snap" into view       |
+| bottom   | `slot`    |         | This slot appears across the bottom of the app bar                                        |
 
 ## ⭐️ Show Your Support
 
